@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Booking from './components/Booking';
+import BookingForm from './components/BookingForm';
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Main from './components/Main'
+import Nav from './components/Nav'
+import { ChakraProvider, VStack } from "@chakra-ui/react";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+
+      <main>
+        <VStack align="stretch" spacing="20px">
+          <BrowserRouter>
+
+            <Nav />
+            <Header />
+            <Main />
+            <Footer />
+          </BrowserRouter>
+        </VStack>
+
+      </main>
+
+
+
+
+    </ChakraProvider>
+
   );
 }
 
